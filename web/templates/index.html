@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Query ER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Query ER</h1>
+        
+        <div class="input-section">
+            <textarea id="inputText" placeholder="متن جستجو ..."></textarea>
+            <button id="analyzeBtn" onclick="analyzeText()">تحلیل متن</button>
+        </div>
+        
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>processing...</p>
+        </div>
+        
+        <div id="results" class="results" style="display: none;">
+            <h2>results:</h2>
+
+            <div class="result-block">
+                <h3>متن نرمال‌شده:</h3>
+                <div id="normalizedText" class="normalized-text"></div>
+            </div>
+
+            <div class="result-block">
+                <h3>اینتیتی‌ها روی متن نرمال‌شده:</h3>
+                <div id="highlightedText" class="highlighted-text"></div>
+            </div>
+            
+            <div class="result-block">
+                <h3>لیست entity ها:</h3>
+                <div id="entitiesList" class="entities-list"></div>
+            </div>
+        </div>
+        
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
