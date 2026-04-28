@@ -5,8 +5,9 @@ from hazm import Normalizer
 
 app = Flask(__name__)
 
-MODEL_VERSION = 'v02'
-MODEL_PATH = Path(__file__).parent.parent / "training" / "output" / MODEL_VERSION / "model-best"
+# MODEL_VERSION = 'v03'
+# MODEL_PATH = Path(__file__).parent.parent / "training" / "output" / MODEL_VERSION / "model-best"
+MODEL_PATH = Path(r"C:\Users\CNE\Desktop\training\output\v03\model-best")
 nlp = spacy.load(MODEL_PATH)
 
 normalizer = Normalizer()
